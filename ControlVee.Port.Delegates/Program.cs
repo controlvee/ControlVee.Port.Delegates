@@ -34,12 +34,39 @@ namespace ControlVee.Port.Delegates
         
         public void SayOuch()
         {
-            Console.WriteLine($"{Perp} looks at {Victim}");
+            Console.WriteLine($"{Perp} looks at {Victim}.");
         }
         
         public int ScreamOuch(int count)
         {
             int rv = 0;
+            //
+            // Phase 1: Encountered exactly 
+            // 1 time - BEFORE looping.
+            //  
+            // Setup.
+            //
+            for (int i = 1; i < count; i++)
+            {
+                // 
+                // Phase 2: Encountered {count} 
+                // times - BEFORE WriteLine().
+                //
+                Console.WriteLine($"{Perp} looks at {Victim} x {i} of {count}.");
+                //
+                // Phase 3: Encountered {count} 
+                // times - AFTER WriteLine().
+                //
+                // Individual cleanup.
+                //
+            }
+            //
+            // Phase 4: Encountered exactly 1 
+            // time - AFTER looping.
+            //
+            // Final cleanup.
+            //
+
             return rv;
         }
     }
@@ -55,7 +82,7 @@ namespace ControlVee.Port.Delegates
         {
             int rv = 0;
 
-            Console.WriteLine($"HELLO! x {times}");
+            Console.WriteLine($"HELLO x {times}.");
 
             return rv;
         }
